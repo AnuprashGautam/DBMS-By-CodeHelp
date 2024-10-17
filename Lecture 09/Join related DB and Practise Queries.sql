@@ -69,12 +69,17 @@ SELECT * FROM Client;
 
 -- Practise
 
+
+-- INNER JOIN 
+-- Enlist all the employees ID's, names along with the project allocated to them.
 SELECT e.fname,e.lname,p.id,p.name FROM Employee AS e
 INNER JOIN 
 Project AS p
 ON 
 e.id=p.empID;
 
+-- INNER JOIN
+-- Fetch out those employee that are from Jaipur and clients which are from Hyderabad.
 SELECT e.fname,e.lname, c.first_name, c.last_name FROM Employee AS e
 INNER JOIN 
 Client as c
@@ -83,18 +88,24 @@ e.id=c.empID
 WHERE 
 e.City="Jaipur" AND c.City="Hyderabad";
 
+-- LEFT JOIN 
+-- Fetch out each project allocated to each employee.
 SELECT * FROM Employee 
-LEFT JOIN 
+LEFT JOIN
 Project
 ON
 Employee.id=Project.empID;
 
-SELECT p.name,e.fname,e.lname,e.emailID FROM Project AS P
-INNER JOIN 
+-- INNER JOIN 
+-- Fetch the details of the employee and project allocated to them.
+SELECT p.name,e.fname,e.lname,e.emailID FROM Project AS p
+RIGHT JOIN 
 Employee AS e
 ON
 p.empID=e.id;
 
+-- CROSS JOIN 
+-- List out all the combinations possible for the employee's name and projects that can exists.
 SELECT Employee.fname,Employee.lname,Project.id, Project.name FROM Employee 
 CROSS JOIN 
 Project;
