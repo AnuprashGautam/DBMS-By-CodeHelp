@@ -1,0 +1,17 @@
+SHOW DATABASES;
+USE company;
+
+-- ORIGINAL TABLE
+SELECT * FROM Employee;
+
+-- CREATING A VIEW
+CREATE VIEW custom_view AS SELECT fname, age FROM Employee;
+
+-- VIEWING FROM VIEW
+SELECT * FROM custom_view;
+
+-- ALTERING THE VIEW
+ALTER VIEW custom_view AS SELECT lname, age FROM Employee;
+
+-- DROPING THE VIEW
+DROP VIEW IF EXISTS custom_view;
