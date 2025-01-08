@@ -1,0 +1,1 @@
+Visit this link: https://www.geeksforgeeks.org/structure-of-database-management-system/
